@@ -25,17 +25,12 @@
     </property>
     <item>
      <property name="text">
+      <string>Cesar</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
       <string>Grid</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Vigenere</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>T9</string>
      </property>
     </item>
     <item>
@@ -50,7 +45,12 @@
     </item>
     <item>
      <property name="text">
-      <string>New Item</string>
+      <string>T9</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Vigenere</string>
      </property>
     </item>
    </widget>
@@ -58,9 +58,9 @@
     <property name="geometry">
      <rect>
       <x>200</x>
-      <y>0</y>
+      <y>60</y>
       <width>481</width>
-      <height>351</height>
+      <height>291</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -85,7 +85,10 @@
       </widget>
      </item>
      <item>
-      <widget class="QPlainTextEdit" name="plainTextEdit"/>
+      <widget class="QPlainTextEdit" name="plainTextEdit_2"/>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout"/>
      </item>
      <item>
       <spacer name="verticalSpacer">
@@ -108,7 +111,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QTextEdit" name="textEdit"/>
+      <widget class="QPlainTextEdit" name="plainTextEdit"/>
      </item>
      <item>
       <spacer name="verticalSpacer_3">
@@ -150,6 +153,28 @@
     <property name="text">
      <string>Encode</string>
     </property>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>10</y>
+      <width>481</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Options</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QSpinBox" name="spinBox"/>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

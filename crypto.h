@@ -5,12 +5,18 @@
 
 using namespace std;
 
-class Crypto
-{
+class Crypto {
 public:
     Crypto();
 };
 
+
+class Cesar {
+public:
+    Cesar();
+    string encode(string text, int key = 0);
+    string decode(string text, int key = 0);
+};
 
 class Grid {
 public:

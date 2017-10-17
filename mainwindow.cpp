@@ -3,7 +3,7 @@
 #include "crypto.h"
 
 
-Grid cypher;
+Cesar cypher;
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -13,15 +13,15 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 }
 
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow() {
     delete ui;
 }
 
-void MainWindow::on_pushButton_encode_clicked()
-{
-    string coded = cypher.encode("HELLO");
-    qInfo("ENCODE");
+void MainWindow::on_pushButton_encode_clicked() {
+    int key = ui->spinBox->value();
+    string text = cypher.encode(ui->plainTextEdit_2->toPlainText().toStdString(), key);
+    QString coded = QString::fromStdString(text);
+    ui->plainTextEdit->document()->setPlainText(coded);
 }
 
 void MainWindow::on_pushButton_decode_clicked()
