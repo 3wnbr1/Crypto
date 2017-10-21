@@ -18,6 +18,10 @@ public:
 public slots:
     void on_pushButton_encode_clicked();
     void on_pushButton_decode_clicked();
+    void on_pushButton_inv_clicked();
+
+private slots:
+    void on_listWidget_currentTextChanged(const QString &currentText);
 
 private:
     Ui::MainWindow *ui;
