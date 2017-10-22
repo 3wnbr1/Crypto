@@ -7,22 +7,26 @@ using namespace std;
 
 class Crypto {
 public:
-    Crypto();
+Crypto();
 };
 
 
 class Cesar {
 public:
-    Cesar();
-    string encode(string text, int key = 0);
-    string decode(string text, int key = 0);
+Cesar();
+string encode(string text, int key = 0);
+string decode(string text, int key = 0);
 };
 
 class Grid {
 public:
-    Grid();
-    string encode(string text);
-    string decode(string text);
+	Grid();
+	void size();
+	string encode(string text);
+	string decode(string text);
+private:
+	int n = 0;
+	int p = 0;
+	int index = -1;
 };
-
 #endif // CRYPTO_H
