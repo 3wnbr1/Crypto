@@ -2,39 +2,31 @@
 #include "ui_mainwindow.h"
 #include "crypto.h"
 
-
-Cesar cypher;
+#include <QtWidgets/QSpinBox>
 
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
+    cypher = new Cesar;
+    cypher->ui(*ui->layout_options);
     this->statusBar()->showMessage("Cesar cypher selected");
 }
 
 MainWindow::~MainWindow() {
+    delete cypher;
     delete ui;
 }
 
 void MainWindow::on_pushButton_encode_clicked() {
-    int key = ui->spinBox->value();
-    string text = cypher.encode(ui->plainTextEdit_2->toPlainText().toStdString(), key);
-    QString coded = QString::fromStdString(text);
-    ui->plainTextEdit->document()->setPlainText(coded);
+    cypher->encode(*ui);
 }
 
 void MainWindow::on_pushButton_decode_clicked() {
-    int key = ui->spinBox->value();
-    string text = cypher.decode(ui->plainTextEdit_2->toPlainText().toStdString(), key);
-    QString coded = QString::fromStdString(text);
-    ui->plainTextEdit->document()->setPlainText(coded);
+    cypher->decode(*ui);
 }
 
 void MainWindow::on_pushButton_inv_clicked() {
-    QString text1 = ui->plainTextEdit_2->toPlainText();
-    ui->plainTextEdit_2->document()->setPlainText(ui->plainTextEdit->toPlainText());
-    ui->plainTextEdit->document()->setPlainText(text1);
-}
-
-void MainWindow::on_listWidget_currentTextChanged(const QString &currentText) {
-
+    QString text1 = ui->plainTextEdit_input->toPlainText();
+    ui->plainTextEdit_input->document()->setPlainText(ui->plainTextEdit_output->toPlainText());
+    ui->plainTextEdit_output->document()->setPlainText(text1);
 }
