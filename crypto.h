@@ -10,8 +10,7 @@
 #include <QtWidgets/QPushButton>
 
 using namespace std;
-
-class Crypto {
+class Crypto : public QObject {
 public:
     Crypto();
     void ui(QHBoxLayout &layout);
@@ -23,17 +22,23 @@ private:
 
 
 class Cesar : public Crypto {
+Q_OBJECT
 public:
     Cesar();
     void ui(QHBoxLayout &layout);
-    string cypher(string text, int key);
     void encode(Ui::MainWindow &ui);
     void decode(Ui::MainWindow &ui);
+public slots:
+    void currentTextHasChanged(QString value);
 private:
     QLabel *description;
     QSpinBox *cesar_spin;
     QComboBox *predefined_combobox;
+    string cypher(string text, int key);
+    void combobox_set();
 };
+
+
 
 class Grid : public Crypto {
 public:

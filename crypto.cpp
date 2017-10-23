@@ -9,7 +9,7 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QPushButton>
 
-Crypto::Crypto() {
+Crypto::Crypto() : QObject() {
     option_label = new QLabel;
 }
 
@@ -30,7 +30,7 @@ void Crypto::decode(Ui::MainWindow &ui) {
 CESAR CYPHER
 */
 
-Cesar::Cesar() {
+Cesar::Cesar() : Crypto() {
     description = new QLabel;
     cesar_spin = new QSpinBox;
     predefined_combobox = new QComboBox;
@@ -41,6 +41,8 @@ void Cesar::ui(QHBoxLayout &layout) {
     layout.addWidget(description);
     layout.addWidget(cesar_spin);
     layout.addWidget(predefined_combobox);
+    combobox_set();
+    QObject::connect(predefined_combobox, SIGNAL(currentTextChanged(QString)), this, SLOT(currentTextHasChanged(QString)));
 }
 
 string Cesar::cypher(string text, int key) {
@@ -87,6 +89,13 @@ void Cesar::decode(Ui::MainWindow &ui) {
     ui.plainTextEdit_output->document()->setPlainText(QString::fromStdString(out));
 }
 
+void Cesar::combobox_set() {
+    predefined_combobox->addItems({"custom","Avocat", "QG"});
+}
+
+void Cesar::currentTextHasChanged(QString value) {
+    qInfo("Changed");
+}
 
 /*
 CUSTOM GRID CYPHER
