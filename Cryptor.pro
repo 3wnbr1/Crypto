@@ -12,12 +12,12 @@ TARGET = Cryptor
 TEMPLATE = app
 TRANSLATIONS = cryptor_en.ts cryptor_fr.ts
 
-win32 {
-    RC_ICONS = icon.ico
-}
 
 macx {
     ICON = logo.icns
+}
+else {
+    RC_ICONS = logo.ico
 }
 
 # The following define makes your compiler emit warnings if you use
