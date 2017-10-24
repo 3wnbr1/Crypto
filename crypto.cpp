@@ -9,6 +9,8 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QPushButton>
 
+
+
 Crypto::Crypto() : QObject() {
     option_label = new QLabel;
 }
@@ -26,9 +28,15 @@ void Crypto::decode(Ui::MainWindow &ui) {
     ui.plainTextEdit_output->document()->setPlainText("Cannot decode");
 }
 
-/*
-CESAR CYPHER
-*/
+Crypto::~Crypto() {
+    delete option_label;
+}
+
+
+//////////////////////////
+///    CESAR CYPHER    ///
+//////////////////////////
+
 
 Cesar::Cesar() : Crypto() {
     description = new QLabel;
@@ -90,16 +98,42 @@ void Cesar::decode(Ui::MainWindow &ui) {
 }
 
 void Cesar::combobox_set() {
-    predefined_combobox->addItems({"custom","Avocat", "QG"});
+    predefined_combobox->addItems({"custom","Avocat", "Bande dessinée", "Oeuf pourri", "Pays", "QG", "TV", "WC"});
 }
 
-void Cesar::currentTextHasChanged(QString value) {
-    qInfo("Changed");
+void Cesar::currentTextHasChanged(QString nil) {
+    QString value = predefined_combobox->currentText();
+    if (value == "custom") {
+        cesar_spin->setEnabled(true);
+    } else {
+        cesar_spin->setEnabled(false);
+        if (value == "Avocat") {
+            cesar_spin->setValue(16);
+        } else if (value == "QG") {
+            cesar_spin->setValue(10);
+        } else if (value == "Pays") {
+            cesar_spin->setValue(7);
+        } else if (value == "WC") {
+            cesar_spin->setValue(20);
+        } else if ((value == "TV") || (value == "Bande dessinée")) {
+            cesar_spin->setValue(24);
+        } else if (value == "Oeuf pourri") {
+            cesar_spin->setValue(22);
+        }
+    }
 }
 
-/*
-CUSTOM GRID CYPHER
-*/
+Cesar::~Cesar() {
+    delete cesar_spin;
+    delete predefined_combobox;
+    delete description;
+}
+
+
+//////////////////////////
+/// CUSTOM GRID CYPHER ///
+//////////////////////////
+
 
 Grid::Grid() {
 	n = 0;

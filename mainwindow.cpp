@@ -30,3 +30,7 @@ void MainWindow::on_pushButton_inv_clicked() {
     ui->plainTextEdit_input->document()->setPlainText(ui->plainTextEdit_output->toPlainText());
     ui->plainTextEdit_output->document()->setPlainText(text1);
 }
+
+void MainWindow::on_listWidget_currentRowChanged(int currentRow) {
+
+}

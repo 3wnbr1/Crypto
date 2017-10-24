@@ -20,39 +20,12 @@
       <x>0</x>
       <y>0</y>
       <width>191</width>
-      <height>391</height>
+      <height>401</height>
      </rect>
     </property>
-    <item>
-     <property name="text">
-      <string>Cesar</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Grid</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Maya</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Morse</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>T9</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Vigenere</string>
-     </property>
-    </item>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
    </widget>
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">

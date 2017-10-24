@@ -13,9 +13,10 @@ using namespace std;
 class Crypto : public QObject {
 public:
     Crypto();
-    void ui(QHBoxLayout &layout);
-    void encode(Ui::MainWindow &ui);
-    void decode(Ui::MainWindow &ui);
+    virtual void ui(QHBoxLayout &layout);
+    virtual void encode(Ui::MainWindow &ui);
+    virtual void decode(Ui::MainWindow &ui);
+    virtual ~Crypto();
 private:
     QLabel *option_label;
 };
@@ -25,11 +26,12 @@ class Cesar : public Crypto {
 Q_OBJECT
 public:
     Cesar();
-    void ui(QHBoxLayout &layout);
-    void encode(Ui::MainWindow &ui);
-    void decode(Ui::MainWindow &ui);
+    virtual void ui(QHBoxLayout &layout);
+    virtual void encode(Ui::MainWindow &ui);
+    virtual void decode(Ui::MainWindow &ui);
+    virtual ~Cesar();
 public slots:
-    void currentTextHasChanged(QString value);
+    void currentTextHasChanged(QString nil);
 private:
     QLabel *description;
     QSpinBox *cesar_spin;
