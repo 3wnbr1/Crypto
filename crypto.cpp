@@ -17,17 +17,17 @@ Crypto::Crypto() : QObject() {
 
 void Crypto::ui(QHBoxLayout &layout) {
     while (layout.count() != 0) { layout.removeItem(layout.takeAt(0));}
-    option_label->setText("No Options avalaible");
+    option_label->setText(tr("No Options avalaible", "Default options"));
     layout.addWidget(option_label);
     layout.update();
 }
 
 void Crypto::encode(Ui::MainWindow &ui) {
-    ui.plainTextEdit_output->document()->setPlainText("Cannot encode");
+    ui.plainTextEdit_output->document()->setPlainText(tr("Cannot encode"));
 }
 
 void Crypto::decode(Ui::MainWindow &ui) {
-    ui.plainTextEdit_output->document()->setPlainText("Cannot decode");
+    ui.plainTextEdit_output->document()->setPlainText(tr("Cannot decode"));
 }
 
 Crypto::~Crypto() {
@@ -49,7 +49,7 @@ Cesar::Cesar() : Crypto() {
 void Cesar::ui(QHBoxLayout &layout) {
     while (layout.count() != 0) { layout.removeItem(layout.takeAt(0));}
     layout.update();
-    description->setText("Cesar padding ");
+    description->setText(tr("Cesar padding"));
     layout.addWidget(description);
     layout.addWidget(cesar_spin);
     layout.addWidget(predefined_combobox);
@@ -103,11 +103,11 @@ void Cesar::decode(Ui::MainWindow &ui) {
 }
 
 void Cesar::combobox_set() {
-    predefined_combobox->addItems({"custom","Avocat", "Bande dessinée", "Oeuf pourri", "Pays", "QG", "TV", "WC"});
+    predefined_combobox->addItems({tr("custom"),"Avocat", "Bande dessinée", "Oeuf pourri", "Pays", "QG", "TV", "WC"});
 }
 
 void Cesar::currentTextHasChanged(QString value) {
-    if (value == "custom") {
+    if (value == tr("custom")) {
         cesar_spin->setEnabled(true);
     } else {
         cesar_spin->setEnabled(false);

@@ -10,6 +10,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Cryptor
 TEMPLATE = app
+TRANSLATIONS = cryptor_en.ts cryptor_fr.ts
 
 win32 {
     RC_ICONS = icon.ico

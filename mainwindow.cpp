@@ -11,11 +11,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     setup_cryptoList();
     cypher = new Crypto;
     cypher->ui(*ui->layout_options);
-    this->statusBar()->showMessage("Welcome to AGSE Crypto");
+    this->statusBar()->showMessage(tr("Welcome to AGSE Crypto"));
 }
 
 void MainWindow::setup_cryptoList() {
-    cryptoList << "César" << "Grid" << "Morse";
+    cryptoList << tr("César") << tr("Grid") << tr("Morse");
     ui->listWidget->addItems(cryptoList);
 }
 
@@ -40,13 +40,13 @@ void MainWindow::on_pushButton_inv_clicked() {
 
 void MainWindow::on_listWidget_currentTextChanged(const QString &currentText) {
     delete cypher;
-    if (currentText == "César") {
+    if (currentText == tr("César")) {
         cypher = new Cesar;
-    } else if (currentText == "Grid") {
+    } else if (currentText == tr("Grid")) {
         cypher = new Grid;
     } else {
         cypher = new Crypto;
     }
     cypher->ui(*ui->layout_options);
-    this->statusBar()->showMessage(currentText + " selected");
+    this->statusBar()->showMessage(currentText + tr(" selected"));
 }
