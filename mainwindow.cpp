@@ -2,14 +2,21 @@
 #include "ui_mainwindow.h"
 #include "crypto.h"
 
+#include <QApplication>
 #include <QtWidgets/QSpinBox>
 
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
-    cypher = new Cesar;
+    setup_cryptoList();
+    cypher = new Crypto;
     cypher->ui(*ui->layout_options);
-    this->statusBar()->showMessage("Cesar cypher selected");
+    this->statusBar()->showMessage("Welcome to AGSE Crypto");
+}
+
+void MainWindow::setup_cryptoList() {
+    cryptoList << "César" << "Grid" << "Morse";
+    ui->listWidget->addItems(cryptoList);
 }
 
 MainWindow::~MainWindow() {
@@ -31,6 +38,15 @@ void MainWindow::on_pushButton_inv_clicked() {
     ui->plainTextEdit_output->document()->setPlainText(text1);
 }
 
-void MainWindow::on_listWidget_currentRowChanged(int currentRow) {
-
+void MainWindow::on_listWidget_currentTextChanged(const QString &currentText) {
+    delete cypher;
+    if (currentText == "César") {
+        cypher = new Cesar;
+    } else if (currentText == "Grid") {
+        cypher = new Grid;
+    } else {
+        cypher = new Crypto;
+    }
+    cypher->ui(*ui->layout_options);
+    this->statusBar()->showMessage(currentText + " selected");
 }

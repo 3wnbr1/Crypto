@@ -16,8 +16,10 @@ Crypto::Crypto() : QObject() {
 }
 
 void Crypto::ui(QHBoxLayout &layout) {
+    while (layout.count() != 0) { layout.removeItem(layout.takeAt(0));}
     option_label->setText("No Options avalaible");
     layout.addWidget(option_label);
+    layout.update();
 }
 
 void Crypto::encode(Ui::MainWindow &ui) {
@@ -45,10 +47,13 @@ Cesar::Cesar() : Crypto() {
 }
 
 void Cesar::ui(QHBoxLayout &layout) {
+    while (layout.count() != 0) { layout.removeItem(layout.takeAt(0));}
+    layout.update();
     description->setText("Cesar padding ");
     layout.addWidget(description);
     layout.addWidget(cesar_spin);
     layout.addWidget(predefined_combobox);
+    layout.update();
     combobox_set();
     QObject::connect(predefined_combobox, SIGNAL(currentTextChanged(QString)), this, SLOT(currentTextHasChanged(QString)));
 }
@@ -101,8 +106,7 @@ void Cesar::combobox_set() {
     predefined_combobox->addItems({"custom","Avocat", "Bande dessinée", "Oeuf pourri", "Pays", "QG", "TV", "WC"});
 }
 
-void Cesar::currentTextHasChanged(QString nil) {
-    QString value = predefined_combobox->currentText();
+void Cesar::currentTextHasChanged(QString value) {
     if (value == "custom") {
         cesar_spin->setEnabled(true);
     } else {

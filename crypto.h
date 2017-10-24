@@ -31,7 +31,7 @@ public:
     virtual void decode(Ui::MainWindow &ui);
     virtual ~Cesar();
 public slots:
-    void currentTextHasChanged(QString nil);
+    void currentTextHasChanged(QString value);
 private:
     QLabel *description;
     QSpinBox *cesar_spin;
