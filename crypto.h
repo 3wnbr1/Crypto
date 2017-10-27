@@ -12,23 +12,24 @@
 using namespace std;
 class Crypto : public QObject {
 public:
-    Crypto();
+    Crypto(Ui::MainWindow &ui);
     virtual void ui(QHBoxLayout &layout);
-    virtual void encode(Ui::MainWindow &ui);
-    virtual void decode(Ui::MainWindow &ui);
+    virtual void encode();
+    virtual void decode();
     virtual ~Crypto();
 private:
     QLabel *option_label;
+    Ui::MainWindow *mainwindowUi;
 };
 
 
 class Cesar : public Crypto {
 Q_OBJECT
 public:
-    Cesar();
+    Cesar(Ui::MainWindow &ui);
     virtual void ui(QHBoxLayout &layout);
-    virtual void encode(Ui::MainWindow &ui);
-    virtual void decode(Ui::MainWindow &ui);
+    virtual void encode();
+    virtual void decode();
     virtual ~Cesar();
 public slots:
     void currentTextHasChanged(QString value);
@@ -36,15 +37,35 @@ private:
     QLabel *description;
     QSpinBox *cesar_spin;
     QComboBox *predefined_combobox;
+    Ui::MainWindow *mainwindowUi;
     string cypher(string text, int key);
     void combobox_set();
 };
 
 
+class Numeric : public Crypto {
+Q_OBJECT
+public:
+    Numeric(Ui::MainWindow &ui);
+    virtual void ui(QHBoxLayout &layout);
+    virtual void encode();
+    virtual void decode();
+    virtual ~Numeric();
+public slots:
+    void currentTextHasChanged(QString value);
+private:
+    QLabel *description;
+    QSpinBox *cesar_spin;
+    QComboBox *predefined_combobox;
+    Ui::MainWindow *mainwindowUi;
+    string cypher(string text, int key);
+    void combobox_set();
+};
+
 
 class Grid : public Crypto {
 public:
-	Grid();
+    Grid(Ui::MainWindow &ui);
     void size(int l);
 private:
     int n = 0;

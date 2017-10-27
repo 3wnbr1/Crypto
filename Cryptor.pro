@@ -10,8 +10,6 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Cryptor
 TEMPLATE = app
-TRANSLATIONS = cryptor_en.ts cryptor_fr.ts
-
 
 macx {
     ICON = logo.icns
@@ -45,5 +43,9 @@ FORMS += \
         mainwindow.ui
 
 DISTFILES += \
-    logo.icns
-    logo.ico
+    logo.icns \
+    logo.ico \
+    cryptor_en.ts \
+    cryptor_fr.ts
+
+TRANSLATIONS = cryptor_en.ts cryptor_fr.ts
