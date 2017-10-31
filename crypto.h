@@ -33,7 +33,7 @@ public:
     virtual ~Cesar();
 public slots:
     void currentTextHasChanged(QString value);
-private:
+protected:
     QLabel *description;
     QSpinBox *cesar_spin;
     QComboBox *predefined_combobox;
@@ -53,7 +53,7 @@ public:
     virtual ~Numeric();
 public slots:
     void currentTextHasChanged(QString value);
-private:
+protected:
     QLabel *description;
     QSpinBox *cesar_spin;
     QComboBox *predefined_combobox;
@@ -63,11 +63,26 @@ private:
 };
 
 
+class Morse : public Crypto {
+public:
+    Morse(Ui::MainWindow &ui);
+    virtual void ui(QHBoxLayout &layout);
+    string cypher(string text);
+    virtual void encode();
+    virtual void decode();
+    virtual ~Morse();
+private:
+    QLabel *option_label;
+    Ui::MainWindow *mainwindowUi;
+};
+
+
 class Grid : public Crypto {
 public:
     Grid(Ui::MainWindow &ui);
     void size(int l);
-private:
+protected:
+    Ui::MainWindow *mainwindowUi;
     int n = 0;
     int m = 0;
 	int index = -1;
