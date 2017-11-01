@@ -14,6 +14,7 @@ Q_OBJECT
 public:
     explicit MainWindow(QWidget *parent = 0);
     void setup_cryptoList();
+    void setup_connections();
     ~MainWindow();
 
 public slots:
@@ -21,6 +22,9 @@ public slots:
     void on_pushButton_decode_clicked();
     void on_pushButton_inv_clicked();
     void on_listWidget_currentTextChanged(const QString &currentText);
+    void on_actionAboutQt(bool toogled);
+    void on_actionAbout(bool toogled);
+
 
 private:
     Ui::MainWindow *ui;

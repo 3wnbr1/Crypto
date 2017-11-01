@@ -19,7 +19,7 @@ Crypto::Crypto(Ui::MainWindow &ui) : QObject() {
 
 void Crypto::ui(QHBoxLayout &layout) {
 	while (layout.count() != 0) { layout.removeItem(layout.takeAt(0));}
-	option_label->setText(tr("No Options avalaible", "Default options"));
+    option_label->setText(tr("No Options avalaible"));
 	layout.addWidget(option_label);
 	layout.update();
 }

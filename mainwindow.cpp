@@ -5,6 +5,7 @@
 #include <QApplication>
 #include <QtWidgets/QSpinBox>
 #include <QMessageBox>
+#include <QPixmap>
 
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -13,6 +14,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 	cypher = new Crypto(*ui);
 	cypher->ui(*ui->layout_options);
 	this->statusBar()->showMessage(tr("Welcome to AGSE Crypto"));
+    setup_connections();
+}
+
+void MainWindow::setup_connections() {
+    connect(ui->actionAbout_Qt, SIGNAL(triggered(bool)), this, SLOT(on_actionAboutQt(bool)));
+    connect(ui->actionAbout, SIGNAL(triggered(bool)), this, SLOT(on_actionAbout(bool)));
 }
 
 void MainWindow::setup_cryptoList() {
@@ -52,4 +59,18 @@ void MainWindow::on_listWidget_currentTextChanged(const QString &currentText) {
 	}
 	cypher->ui(*ui->layout_options);
 	this->statusBar()->showMessage(currentText + tr(" selected"));
+}
+
+void MainWindow::on_actionAboutQt(bool toogled){
+    QMessageBox::aboutQt(this);
+}
+
+void MainWindow::on_actionAbout(bool toogled) {
+    QMessageBox about;
+    about.setText(tr("AGSE Crypto"));
+    about.setInformativeText(tr("Created by Ewen BRUN\nPour la troupe 1ere Notre Dame des Dombes\n\nVous pouvez contribuer à l'adresse suivante:\nhttps://github.com\n\nCopyright © 2017, Ewen BRUN"));
+    about.setStandardButtons(QMessageBox::Ok);
+    about.setIconPixmap(QPixmap(":/logo.ico"));
+    about.show();
+    about.exec();
 }

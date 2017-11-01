@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>cryptor_en.qm</file>
+        <file>cryptor_fr.qm</file>
+        <file>logo.ico</file>
+        <file>logo.icns</file>
+    </qresource>
+</RCC>
