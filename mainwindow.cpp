@@ -68,7 +68,7 @@ void MainWindow::on_actionAboutQt(bool toogled){
 void MainWindow::on_actionAbout(bool toogled) {
     QMessageBox about;
     about.setText(tr("AGSE Crypto"));
-    about.setInformativeText(tr("Created by Ewen BRUN\nPour la troupe 1ere Notre Dame des Dombes\n\nVous pouvez contribuer à l'adresse suivante:\nhttps://github.com\n\nCopyright © 2017, Ewen BRUN"));
+    about.setInformativeText(tr("<body align='center'><p>Created by Ewen BRUN\nPour la troupe 1ere Notre Dame des Dombes</p><p>Vous pouvez contribuer à l'adresse suivante:\nhttps://github.com<p></p>Copyright © 2017, Ewen BRUN</body>"));
     about.setStandardButtons(QMessageBox::Ok);
     about.setIconPixmap(QPixmap(":/logo.ico"));
     about.show();
