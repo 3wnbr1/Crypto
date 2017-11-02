@@ -13,8 +13,8 @@ Languages : [French](/Crypto)
 OS          | Lien
 ----------- | -----------------------------------------------------------------------------------
 Windows x86 | Not available yet
-Windows x64 | Not available yet
-macOS x64   | [Version 0.1](https://github.com/N0n3Typ3/Crypto/releases/download/0.1/Cryptor.zip)
+Windows x64 | [Version 0.1](https://github.com/N0n3Typ3/Crypto/releases/download/0.1/CryptorWin64.zip)
+macOS x64   | [Version 0.1](https://github.com/N0n3Typ3/Crypto/releases/download/0.1/CryptorMac.zip)
 Linux x86   | Not available yet
 Linux x64   | Not available yet
 
@@ -24,10 +24,10 @@ You can also build it by yourself
 
 ```
 git clone https://github.com/N0n3Typ3/Crypto.git
-cd Cryptor
+cd Crypto
 mkdir build
 cd build
-qmake
+qmake ..
 make
 ```
 

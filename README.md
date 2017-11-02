@@ -14,8 +14,8 @@ Languages : [English](/Readme.en.md)
 OS          |  Lien
 ------------|------------------------
 Windows x86 | Indisponible pour le moment
-Windows x64 | Indisponible pour le moment
-macOS x64   | [Version 0.1](https://github.com/N0n3Typ3/Crypto/releases/download/0.1/Cryptor.zip)
+Windows x64 | [Version 0.1](https://github.com/N0n3Typ3/Crypto/releases/download/0.1/CryptorWin64.zip)
+macOS x64   | [Version 0.1](https://github.com/N0n3Typ3/Crypto/releases/download/0.1/CryptorMac.zip)
 Linux x86   | Indisponible pour le moment
 Linux x64   | Indisponible pour le moment
 
@@ -25,10 +25,10 @@ Linux x64   | Indisponible pour le moment
 Vous pouver aussi compiler vous meme
 ```
 git clone https://github.com/N0n3Typ3/Crypto.git
-cd Cryptor
+cd Crypto
 mkdir build
 cd build
-qmake
+qmake ..
 make
 ```
 
