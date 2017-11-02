@@ -23,14 +23,14 @@ Linux x64   | Indisponible pour le moment
 ### Installer
 
 Vous pouver aussi compiler vous meme
-'''
+```
 git clone https://github.com/N0n3Typ3/Crypto.git
 cd Cryptor
 mkdir build
 cd build
 qmake
 make
-'''
+```
 
 ### Contribuer
 

@@ -1,6 +1,6 @@
 # AGSE Crypto
 
-Languages : [French](/)
+Languages : [French](/Readme.md)
 
 ## Cryptography for European Federation of Scoutism
 
@@ -21,14 +21,15 @@ Linux x64   | Not available yet
 ## Install
 
 You can also build it by yourself
-'''
+
+```
 git clone https://github.com/N0n3Typ3/Crypto.git
 cd Cryptor
 mkdir build
 cd build
 qmake
 make
-'''
+```
 
 ## Contribute
 
