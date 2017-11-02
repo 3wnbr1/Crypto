@@ -1,6 +1,6 @@
 # AGSE Crypto
 
-Languages : [French](/Readme.md)
+Languages : [French](/Crypto)
 
 ## Cryptography for European Federation of Scoutism
 
