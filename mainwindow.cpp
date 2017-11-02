@@ -14,12 +14,12 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 	cypher = new Crypto(*ui);
 	cypher->ui(*ui->layout_options);
 	this->statusBar()->showMessage(tr("Welcome to AGSE Crypto"));
-    setup_connections();
+	setup_connections();
 }
 
 void MainWindow::setup_connections() {
-    connect(ui->actionAbout_Qt, SIGNAL(triggered(bool)), this, SLOT(on_actionAboutQt(bool)));
-    connect(ui->actionAbout, SIGNAL(triggered(bool)), this, SLOT(on_actionAbout(bool)));
+	connect(ui->actionAbout_Qt, SIGNAL(triggered(bool)), this, SLOT(on_actionAboutQt(bool)));
+	connect(ui->actionAbout, SIGNAL(triggered(bool)), this, SLOT(on_actionAbout(bool)));
 }
 
 void MainWindow::setup_cryptoList() {
@@ -62,15 +62,15 @@ void MainWindow::on_listWidget_currentTextChanged(const QString &currentText) {
 }
 
 void MainWindow::on_actionAboutQt(bool toogled){
-    QMessageBox::aboutQt(this);
+	QMessageBox::aboutQt(this);
 }
 
 void MainWindow::on_actionAbout(bool toogled) {
-    QMessageBox about;
-    about.setText(tr("AGSE Crypto"));
-    about.setInformativeText(tr("<body align='center'><p>Created by Ewen BRUN\nPour la troupe 1ere Notre Dame des Dombes</p><p>Vous pouvez contribuer à l'adresse suivante:\nhttps://github.com<p></p>Copyright © 2017, Ewen BRUN</body>"));
-    about.setStandardButtons(QMessageBox::Ok);
-    about.setIconPixmap(QPixmap(":/logo.ico"));
-    about.show();
-    about.exec();
+	QMessageBox about;
+	about.setText(tr("AGSE Crypto"));
+	about.setInformativeText(tr("<body align='center'><p>Created by Ewen BRUN\nPour la troupe 1ere Notre Dame des Dombes</p><p>Vous pouvez contribuer à l'adresse suivante:\nhttps://github.com<p></p>Copyright © 2017, Ewen BRUN</body>"));
+	about.setStandardButtons(QMessageBox::Ok);
+	about.setIconPixmap(QPixmap(":/logo.ico"));
+	about.show();
+	about.exec();
 }

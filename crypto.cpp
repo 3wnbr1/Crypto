@@ -19,7 +19,7 @@ Crypto::Crypto(Ui::MainWindow &ui) : QObject() {
 
 void Crypto::ui(QHBoxLayout &layout) {
 	while (layout.count() != 0) { layout.removeItem(layout.takeAt(0));}
-    option_label->setText(tr("No Options avalaible"));
+	option_label->setText(tr("No Options avalaible"));
 	layout.addWidget(option_label);
 	layout.update();
 }
@@ -179,15 +179,15 @@ void Numeric::ui(QHBoxLayout &layout) {
 
 string Numeric::cypher(string text, int key) {
 	int n = text.size();
-    string output;
+	string output;
 	for (int i = 0; i <= n; i++) {
 		if (isalpha(text[i])) {
-            output += to_string(((int(tolower(text[i])) - 96) % 27 + key) % 27) + " ";
-        } else {
-            output += text[i];
-        }
+			output += to_string(((int(tolower(text[i])) - 96) % 27 + key) % 27) + " ";
+		} else {
+			output += text[i];
+		}
 	}
-    return output;
+	return output;
 }
 
 void Numeric::encode() {
@@ -205,7 +205,7 @@ void Numeric::decode() {
 }
 
 void Numeric::combobox_set() {
-    predefined_combobox->addItems({tr("custom"),"Avocat"});
+	predefined_combobox->addItems({tr("custom"),"Avocat"});
 }
 
 void Numeric::currentTextHasChanged(QString value) {
@@ -238,12 +238,12 @@ Morse::Morse(Ui::MainWindow &ui) : Crypto(ui) {
 }
 
 void Morse::ui(QHBoxLayout &layout) {
-    while (layout.count() != 0) { layout.removeItem(layout.takeAt(0));}
-    layout.update();
+	while (layout.count() != 0) { layout.removeItem(layout.takeAt(0));}
+	layout.update();
 }
 
 string Morse::cypher(string text) {
-    return text;
+	return text;
 }
 
 void Morse::encode() {
@@ -267,7 +267,7 @@ Morse::~Morse() {
 
 
 Grid::Grid(Ui::MainWindow &ui) : Crypto(ui) {
-    mainwindowUi = &ui;
+	mainwindowUi = &ui;
 	n = 0;
 	m = 0;
 	index = -1;

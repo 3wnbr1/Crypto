@@ -19,13 +19,13 @@ class Grid:
         self._tab = np.matrix([[""] * self._p] * self._n)
 
     def size(self, l):
-        n = int(l**(1/2))
-        m = int(l**(1/2))
-        if n*m < l:
+        n = int(l**(1 / 2))
+        m = int(l**(1 / 2))
+        if n * m < l:
             m += 1
-        while (n*m - l) >= 0.2*l:
+        while (n * m - l) >= 0.2 * l:
             m += 1
-            while (n-1)*m > l:
+            while (n - 1) * m > l:
                 n -= 1
         self._n = n
         self._p = m
