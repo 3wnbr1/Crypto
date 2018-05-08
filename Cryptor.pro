@@ -11,13 +11,13 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = Cryptor
 TEMPLATE = app
 
-RESOURCES += ressources.qrc
+RESOURCES += rsc/ressources.qrc
 
 macx {
-    ICON = logo.icns
+    ICON = rsc/logo.icns
 }
 else {
-    RC_ICONS = logo.ico
+    RC_ICONS = rsc/logo.ico
 }
 
 # The following define makes your compiler emit warnings if you use
@@ -33,15 +33,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-        main.cpp \
-        mainwindow.cpp \
-        crypto.cpp
+        src/main.cpp \
+        src/mainwindow.cpp \
+        src/crypto.cpp
 
 HEADERS += \
-        mainwindow.h \
-        crypto.h
+        src/mainwindow.h \
+        src/crypto.h
 
 FORMS += \
-        mainwindow.ui
+        ui/mainwindow.ui
 
-TRANSLATIONS = cryptor_en.ts cryptor_fr.ts
+TRANSLATIONS = rsc/cryptor_en.ts rsc/cryptor_fr.ts

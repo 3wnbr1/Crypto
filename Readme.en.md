@@ -8,6 +8,8 @@ Languages : [French](/Crypto)
 
 > Ewen BRUN - ACT troupe 1ère Notre Dame des Dombes
 
+![GUI](doc/GUI.png)
+
 ## Download
 
 OS          | Lien
