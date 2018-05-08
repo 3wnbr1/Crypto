@@ -1,5 +1,7 @@
 # AGSE Crypto
 
+[![Build Status](https://travis-ci.org/3wnbr1/Crypto.svg?branch=master)](https://travis-ci.org/3wnbr1/Crypto)
+
 Languages : [English](/Readme.en.md)
 
 ### Programme de cryptography scoute
@@ -23,7 +25,7 @@ Linux x64   | Indisponible pour le moment
 
 ### Installer
 
-Vous pouver aussi compiler vous meme
+Vous pouver aussi compiler vous même :
 ```
 git clone https://github.com/N0n3Typ3/Crypto.git
 cd Crypto
@@ -36,4 +38,4 @@ make
 ### Contribuer
 
 - Vous pouvez faire par de vos sugestions de nouveaux cryptages en non contactant par email.
-- Vous pouvez egalement ameliorer le projet en créant une nouvelle branche.
+- Vous pouvez egalement améliorer le projet en créant une nouvelle branche.

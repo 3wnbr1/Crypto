@@ -1,5 +1,7 @@
 # AGSE Crypto
 
+[![Build Status](https://travis-ci.org/3wnbr1/Crypto.svg?branch=master)](https://travis-ci.org/3wnbr1/Crypto)
+
 Languages : [French](/Crypto)
 
 ## Cryptography for European Federation of Scoutism
