@@ -1,10 +1,18 @@
 before_install:
- - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
- - sudo apt-get update -qq
- - sudo apt-get install qtbase5-dev qtdeclarative5-dev libqt5webkit5-dev libsqlite3-dev
- - sudo apt-get install qt5-default qttools5-dev-tools
+- sudo add-apt-repository -y ppa:beineri/opt-qt593-trusty
+- sudo apt-get -qq update
+
+install:
+- sudo apt-get -qy install qt59-meta-minimal
+- sudo apt-get -qy install g++
+- sudo apt-get -qy install qt5-qmake qtbase5-dev
+
+before_script:
+- export PATH=/opt/qt59/bin:$PATH
+- export QTDIR=/opt/qt59
 
 script:
+ - qmake --version
  - mkdir build
  - cd build
  - qmake ..

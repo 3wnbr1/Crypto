@@ -3,7 +3,9 @@
 #include <QTranslator>
 
 int main(int argc, char *argv[]) {
+  #ifndef Q_OS_LINUX
 	QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+  #endif
 	QApplication app(argc, argv);
 
 	QTranslator translator;
