@@ -23,5 +23,5 @@ build_script:
   - 7z a Cryptor.zip .
 
 artifacts:
-  - path: Cryptor.zip
+  - path: build/Cryptor/Cryptor.zip
     name: Cryptor
