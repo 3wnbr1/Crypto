@@ -1,5 +1,7 @@
 #include "crypto.h"
 #include <stdio.h>
+#include <sstream>
+#include <string>
 #include <cmath>
 #include "mainwindow.h"
 
@@ -12,10 +14,10 @@
 
 
 // Workaround for MinGW
-std::string to_string(int i) {
-    std::stringstream ss;
-    ss << i;
-    return ss.str();
+string toString(int i) {
+	std::stringstream ss;
+	ss << i;
+	return ss.str();
 }
 
 
@@ -189,7 +191,7 @@ string Numeric::cypher(string text, int key) {
 	string output;
 	for (int i = 0; i <= n; i++) {
 		if (isalpha(text[i])) {
-			output += to_string(((int(tolower(text[i])) - 96) % 27 + key) % 27) + " ";
+			output += toString(((int(tolower(text[i])) - 96) % 27 + key) % 27) + " ";
 		} else {
 			output += text[i];
 		}
