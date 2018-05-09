@@ -1,6 +1,7 @@
 # AGSE Crypto
 
 [![Build Status](https://travis-ci.org/3wnbr1/Crypto.svg?branch=master)](https://travis-ci.org/3wnbr1/Crypto)
+[![Build status](https://ci.appveyor.com/api/projects/status/xeq3uva548i4sh7v?svg=true)](https://ci.appveyor.com/project/3wnbr1/crypto)
 
 Languages : [English](/Readme.en.md)
 
