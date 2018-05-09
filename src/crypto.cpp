@@ -11,6 +11,13 @@
 #include <QMessageBox>
 
 
+// Workaround for MinGW
+std::string to_string(int i) {
+    std::stringstream ss;
+    ss << i;
+    return ss.str();
+}
+
 
 Crypto::Crypto(Ui::MainWindow &ui) : QObject() {
 	mainwindowUi = &ui;
