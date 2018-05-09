@@ -5,14 +5,23 @@ environment:
   - example: Crypto-x86
     name: win32
     qt: mingw53_32
-  - example: Crypto-x64
-    name: win64
-    qt: msvc2015_64
 
 install:
   - set QTDIR=C:\Qt\5.10.1\%qt%
   - set PATH=%PATH%;%QTDIR%\bin;C:\MinGW\bin
+  - qmake -v
 
 build_script:
-  - qmake Cryptor.pro
-  - mingw32-make
+  - md build
+  - cd build
+  - qmake ..
+  - mingw32-make -f Makefile.Release
+  - md Cryptor
+  - cd Cryptor
+  - mv ../release/Cryptor.exe Cryptor.exe
+  - windeployqt Cryptor.exe
+  - 7z a Cryptor.zip .
+
+artifacts:
+  - path: Cryptor.zip
+    name: Cryptor
